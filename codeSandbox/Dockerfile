@@ -13,11 +13,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Coder
-RUN curl -L https://coder.com/install.sh -o install.sh \
-    && chmod +x install.sh \
-    && ./install.sh \
-    && rm install.sh
-
+RUN curl -L https://coder.com/install.sh | sh 
 # Expose ports
 EXPOSE 8080
 EXPOSE 5432
